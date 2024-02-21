@@ -1,11 +1,12 @@
 import React from "react";
 import styled, { css }from "styled-components";
+import BackgroundAnimation from "../../containers/backgroundAnimation/index.jsx";
 
 
 const TopSectionContainer = styled.div`
     width: 100%;
     height: 200vh;
-    background-color: #000;
+    
 `;
 
 
@@ -17,6 +18,9 @@ const TextContainer = styled.div`
     flex-direction: column;
     border: 1px solid red;
     padding: 0;
+    position: relative;
+    z-index: 2;
+    text-color: black;
     ${props => css`
         width: ${props.width || "100%"};
         height: ${props.height || 'auto'};
@@ -29,7 +33,6 @@ const Title = styled.h1`
     font-feature-settings: "liga";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    color: white;
     justify-content: space-evenly;
     word-break: break-word;
     text-align: center;
@@ -40,7 +43,7 @@ const Title = styled.h1`
     `}
 
     ${props => css`
-        font-size: ${props.fontSize || "160px"};
+        font-size: ${props.fontSize || "120px"};
         font-weight: ${props.fontWeight || "700"};
         color: ${props.color || "white"};
     `}
@@ -51,8 +54,7 @@ const Text = styled.p`
     letter-spacing: -0.3px;
     font-feature-settings: "liga";
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: white;     
+    -webkit-font-smoothing: antialiased;    
     justify-content: space-evenly;
     word-break: break-word;
     text-align: center;
@@ -68,6 +70,7 @@ const Text = styled.p`
 export function TopSection(props) {
     return (
         <TopSectionContainer>
+            <BackgroundAnimation />
             <TextContainer height="100vh">
                 <Title firstTitle>Hello! I am</Title>
                 <Title>Sudhanshu Singh</Title>
@@ -76,3 +79,4 @@ export function TopSection(props) {
         </TopSectionContainer>
     );
 }
+

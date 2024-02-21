@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { GridComponent } from './containers/gridComponent/index.jsx';
 import { TopSection } from './pages/homePage/topSection.jsx';
 
 function App() {
@@ -7,8 +6,11 @@ function App() {
     document.title = 'Portfolio';
   },[]);
 
-
-  return <TopSection />;
+  return (
+    <div className="App">
+      <TopSection />
+    </div>
+  );
 }
 
 export default App;
