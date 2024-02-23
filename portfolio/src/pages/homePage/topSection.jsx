@@ -1,11 +1,17 @@
 import React from "react";
 import styled, { css }from "styled-components";
 import BackgroundAnimation from "../../containers/backgroundAnimation/index.jsx";
+import { Navbar } from "../../containers/navBar/index.jsx";
 
 
 const TopSectionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     height: 200vh;
+    background: #000;
     
 `;
 
@@ -71,7 +77,8 @@ export function TopSection(props) {
     return (
         <TopSectionContainer>
             <BackgroundAnimation />
-            <TextContainer height="100vh">
+            <Navbar />
+            <TextContainer height="auto">
                 <Title firstTitle>Hello! I am</Title>
                 <Title>Sudhanshu Singh</Title>
                 <Text fontSize="30px" fontWeight="0">Software Engineer</Text>
