@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
-    document.title = "Digital Pathology"; // Set your desired title here
+    document.title = "Portfolio"; // Set your desired title here
   }, []);
 
   return (

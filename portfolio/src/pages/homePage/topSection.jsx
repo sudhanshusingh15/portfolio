@@ -1,8 +1,19 @@
 import React from "react";
-import styled, { css }from "styled-components";
+import { useState, useEffect } from "react";
+import styled, { keyframes, css }from "styled-components";
 import BackgroundAnimation from "../../containers/backgroundAnimation/index.jsx";
 import { Navbar } from "../../containers/navBar/index.jsx";
 
+const slideDown = keyframes`
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const TopSectionContainer = styled.div`
     display: flex;
@@ -15,21 +26,21 @@ const TopSectionContainer = styled.div`
     
 `;
 
-
 const TextContainer = styled.div`
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
     flex-direction: column;
     border: 1px solid red;
     padding: 0;
     position: relative;
     z-index: 2;
     text-color: black;
+    height: 100%; 
     ${props => css`
         width: ${props.width || "100%"};
-        height: ${props.height || 'auto'};
+        height: ${props.height || '100%'}; 
     `}
 `;
 
@@ -39,21 +50,28 @@ const Title = styled.h1`
     font-feature-settings: "liga";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    justify-content: space-evenly;
-    word-break: break-word;
     text-align: center;
-    margin-bottom: 0;
+    margin: 0; 
+    padding: 0; 
 
+    ${props => props.isTitleVisible && css`
+        animation: ${slideDown} 1.5s ease forwards;
+    `}
+   
     ${props => props.firstTitle && css`
-        margin-bottom: -1.2em;
+        margin-top: 0.45em;
+        margin-bottom: -0.35em;
     `}
 
     ${props => css`
-        font-size: ${props.fontSize || "120px"};
-        font-weight: ${props.fontWeight || "700"};
+        font-size: ${props.fontSize || "170px"};
+        font-weight: ${props.fontWeight || "600"};
         color: ${props.color || "white"};
     `}
 `;
+
+// -webkit-text-stroke-width: 1px; \\for text border
+// -webkit-text-stroke-color: red;
 
 const Text = styled.p`
     font-family: acorn, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -61,11 +79,9 @@ const Text = styled.p`
     font-feature-settings: "liga";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;    
-    justify-content: space-evenly;
-    word-break: break-word;
     text-align: center;
-    margin-bottom: 0;
-
+    margin: 0; 
+    padding: 0;
     ${props => css`
         font-size: ${props.fontSize || "30px"};
         font-weight: ${props.fontWeight || "700"};
@@ -74,13 +90,22 @@ const Text = styled.p`
 `;
 
 export function TopSection(props) {
+    const [isTitleVisible, setIsTitleVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsTitleVisible(true);
+        }, 500); // Delay of 500ms
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <TopSectionContainer>
-            <BackgroundAnimation />
             <Navbar />
             <TextContainer height="auto">
-                <Title firstTitle>Hello! I am</Title>
-                <Title>Sudhanshu Singh</Title>
+                <Title firstTitle isTitleVisible={isTitleVisible}>Hello! I am</Title>
+                <Title isTitleVisible={isTitleVisible}>Sudhanshu</Title>
                 <Text fontSize="30px" fontWeight="0">Software Engineer</Text>
             </TextContainer>
         </TopSectionContainer>
