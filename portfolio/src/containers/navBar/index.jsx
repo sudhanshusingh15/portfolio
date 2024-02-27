@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const NavbarContainer = styled.div`
     width: 100%;
-    height: 85px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 10; 
     transition: background-color 0.3s ease;

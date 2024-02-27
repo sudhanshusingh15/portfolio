@@ -107,7 +107,7 @@ const BackgroundAnimation = () => {
                 powerPreference: "high-performance"
             }}
             dpr={[2, 2]}
-            style={{ height: '100vh', width: '100vw', position: 'absolute', top: 0, left: 0 }}
+            style={{ height: '100%', width: '100%', position: 'absolute', top: 0, left: 0 }}
         >
             <TextureMesh />
         </Canvas>

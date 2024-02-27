@@ -2,7 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styled, { keyframes, css }from "styled-components";
 import BackgroundAnimation from "../../containers/backgroundAnimation/index.jsx";
-import { Navbar } from "../../containers/navBar/index.jsx";
+// import { Navbar } from "../../containers/navBar/index.jsx";
+
+// import { GridComponent }  from "../../containers/gridComponent/index.jsx";
+
 
 const slideDown = keyframes`
   from {
@@ -20,24 +23,26 @@ const TopSectionContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
     width: 100%;
-    height: 200vh;
-    background: #000;
+    height: 100vh;
+    background: #111111;
     
 `;
 
 const TextContainer = styled.div`
     width: 100%;
+    height: 100px; 
     display: flex;
     align-items: center; 
     justify-content: center; 
     flex-direction: column;
     border: 1px solid red;
-    padding: 0;
+    padding: 0 0 50px 0;
     position: relative;
     z-index: 2;
     text-color: black;
-    height: 100%; 
+    
     ${props => css`
         width: ${props.width || "100%"};
         height: ${props.height || '100%'}; 
@@ -59,7 +64,7 @@ const Title = styled.h1`
     `}
    
     ${props => props.firstTitle && css`
-        margin-top: 0.40em;
+        margin-top: 0.90em;
         margin-bottom: -0.35em;
     `}
 
@@ -98,9 +103,35 @@ const Text = styled.p`
     `}
 `;
 
+// const GridComponentContainer = styled.div`
+//     position: absolute;
+//     top: 0; 
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+// `;
+
+// put the animation into the spotify button container when later created
+const SpotifyContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    align-items: center;
+    opacity: 0;
+    ${props => props.isSpotifyVisible && css`
+        animation: ${slideDown} 1.5s ease forwards;
+    `}
+
+`;
+
 export function TopSection(props) {
     const [isTitleVisible, setIsTitleVisible] = useState(false);
     const [isTextVisible, setIsTextVisible] = useState(false);
+    const [isSpotifyVisible, setIsSpotifyVisible] = useState(false);
 
     useEffect(() => {
         const titleTimer = setTimeout(() => {
@@ -120,15 +151,30 @@ export function TopSection(props) {
         }
     }, [isTitleVisible]);
 
+    useEffect(() => {
+        if (isTextVisible) {
+            const textTimer = setTimeout(() => {
+                setIsSpotifyVisible(true);
+            }, 1500);
+
+            return () => clearTimeout(textTimer);
+        }
+    }, [isTextVisible]);
+
+
     return (
         <TopSectionContainer>
-            <Navbar />
+            {/* <BackgroundAnimation /> */}
+            {/* <Navbar /> */}
             <TextContainer height="auto">
                 <Title firstTitle isTitleVisible={isTitleVisible}>Hello! I am</Title>
                 <Title isTitleVisible={isTitleVisible}>Sudhanshu</Title>
                 <Text firstText fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>I am passionate about merging technology and user-centric design</Text>
                 <Text fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>to craft seamless and intuitive digital experiences</Text>
             </TextContainer>
+            <SpotifyContainer isSpotifyVisible={isSpotifyVisible}>
+                <Text fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>Spotify button to put later</Text>
+            </SpotifyContainer>
         </TopSectionContainer>
     );
 }
