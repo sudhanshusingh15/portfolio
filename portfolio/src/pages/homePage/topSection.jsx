@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styled, { keyframes, css }from "styled-components";
 import BackgroundAnimation from "../../containers/backgroundAnimation/index.jsx";
-// import { Navbar } from "../../containers/navBar/index.jsx";
-
 // import { GridComponent }  from "../../containers/gridComponent/index.jsx";
 
 
@@ -32,7 +30,7 @@ const TopSectionContainer = styled.div`
 
 const TextContainer = styled.div`
     width: 100%;
-    height: 100px; 
+    height: auto; 
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -69,7 +67,7 @@ const Title = styled.h1`
     `}
 
     ${props => css`
-        font-size: ${props.fontSize || "170px"};
+        font-size: ${props.fontSize || "10.625em"};
         font-weight: ${props.fontWeight || "600"};
         color: ${props.color || "white"};
     `}
@@ -97,7 +95,7 @@ const Text = styled.p`
     `}
 
     ${props => css`
-        font-size: ${props.fontSize || "30px"};
+        font-size: ${props.fontSize || "1.875em"};
         font-weight: ${props.fontWeight || "700"};
         color: ${props.color || "white"};
     `}
@@ -165,15 +163,14 @@ export function TopSection(props) {
     return (
         <TopSectionContainer>
             {/* <BackgroundAnimation /> */}
-            {/* <Navbar /> */}
             <TextContainer height="auto">
                 <Title firstTitle isTitleVisible={isTitleVisible}>Hello! I am</Title>
                 <Title isTitleVisible={isTitleVisible}>Sudhanshu</Title>
-                <Text firstText fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>I am passionate about merging technology and user-centric design</Text>
-                <Text fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>to craft seamless and intuitive digital experiences</Text>
+                <Text firstText fontSize="1.375em" fontWeight="0" isTextVisible={isTextVisible}>I am passionate about merging technology and user-centric design</Text>
+                <Text fontSize="1.375em" fontWeight="0" isTextVisible={isTextVisible}>to craft seamless and intuitive digital experiences</Text>
             </TextContainer>
             <SpotifyContainer isSpotifyVisible={isSpotifyVisible}>
-                <Text fontSize="22px" fontWeight="0" isTextVisible={isTextVisible}>Spotify button to put later</Text>
+                <Text fontSize="1.375em" fontWeight="0" isTextVisible={isTextVisible}>Spotify button to put later</Text>
             </SpotifyContainer>
         </TopSectionContainer>
     );

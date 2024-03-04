@@ -42,7 +42,7 @@ const AnchorLink = styled(Link)`
     font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 15.2px;
+    font-size: 0.95em;
     color: rgb(255, 255, 255);
     cursor: pointer;
     outline: none;
