@@ -1,0 +1,4 @@
+To Do List:
+
+1. Make TopSection Container's height according to the device height when using media queries.
+    1a. Change SpotifyContainer's height accordingly

@@ -25,6 +25,7 @@ const TopSectionContainer = styled.div`
     width: 100%;
     height: 100vh;
     background: #111111;
+    border: 5px dotted blue;
     
 `;
 
@@ -113,12 +114,13 @@ const Text = styled.p`
 // put the animation into the spotify button container when later created
 const SpotifyContainer = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100em;
     z-index: 1;
     display: flex;
     justify-content: center;
     border: 1px solid red;
     align-items: center;
+    position: relative;
     opacity: 0;
     ${props => props.isSpotifyVisible && css`
         animation: ${slideDown} 1.5s ease forwards;

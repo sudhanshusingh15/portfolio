@@ -54,25 +54,25 @@ const Text = styled.p`
 
 const WorkContainer = styled.div`
     display: flex;
-    
-    justify-content: center; 
-    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
     height: auto;
-    border: 1px solid white;
+    margin-bottom: 7em;
+    border: 5px solid green;
+
 
 `;
 
-
 const IndividualWorkContainer = styled.div`
-    border: 5px solid green;
-    display: inline-flex;
+    height: 62.5vh;
+    border: 2px solid red;
     ${props => css`
         width: ${props.width || "50vw"};
-        height: ${props.height || "50vh"}; 
     `}
 
 `;
-
 const Work = styled.div`
     width: 100%; 
     height: 100%; 
@@ -87,41 +87,34 @@ const Work = styled.div`
     }
 `;
 
-const WorkTextContainer = styled.div`
-    width: 100%; 
-    height: 50vh; 
-`;
-
-
-const WorkText = styled.p`
-   font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 20px;
-   color: white;
-`;
-
-
-
 export function HomePage(props) {
     return (
-        <HomePageContainer>
+        <HomePageContainer className="HomePageContainer">
            <Navbar />
             <TopSection />
             <Title fontSize="70px">Latest Work</Title>
             <WorkContainer>
-                <IndividualWorkContainer>
-                    <Work></Work>
+                <IndividualWorkContainer className="ChaiMoh" width="34.623%">
+                    <Work>
+
+                    </Work>
                 </IndividualWorkContainer>
+                <IndividualWorkContainer className="Dukaan" width="57.8%">
+                    <Work>
 
-                <IndividualWorkContainer>
-
+                    </Work>
                 </IndividualWorkContainer>
+            </WorkContainer>
+            <WorkContainer>
+                <IndividualWorkContainer className="DigitalPathology" width="57.8%">
+                    <Work>
 
-                <IndividualWorkContainer>
-
+                    </Work>
                 </IndividualWorkContainer>
+                <IndividualWorkContainer className="GCI" width="34.623%">
+                    <Work>
 
-                <IndividualWorkContainer>
-
+                    </Work>
                 </IndividualWorkContainer>
             </WorkContainer>
         </HomePageContainer>
