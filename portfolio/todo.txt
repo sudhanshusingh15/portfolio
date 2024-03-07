@@ -2,3 +2,10 @@ To Do List:
 
 1. Make TopSection Container's height according to the device height when using media queries.
     1a. Change SpotifyContainer's height accordingly
+
+2. RESPONSIVE!
+
+3. Create Figma svgs for WorkContainer Cards
+    3a. Download suitable svg for each card for hover effect
+
+4. Footer

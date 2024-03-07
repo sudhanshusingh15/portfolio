@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styled, { keyframes, css }from "styled-components";
 import { TopSection } from "./topSection";
 import { Navbar } from "../../containers/navBar/index.jsx";
+import ResearchSVG from "../../assets/svg/research.jsx";
 
 const HomePageContainer = styled.div`
     display: flex;
@@ -46,7 +47,7 @@ const Text = styled.p`
     padding: 5px;
     
     ${props => css`
-        font-size: ${props.fontSize || "30px"};
+        font-size: ${props.fontSize || "1.875em"};
         font-weight: ${props.fontWeight || "700"};
         color: ${props.color || "white"};
     `}
@@ -57,27 +58,49 @@ const WorkContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 90%;
-    height: auto;
-    margin-bottom: 7em;
+    width: 85%;
+    height: 75vh;
+    
     border: 5px solid green;
 
 
 `;
 
 const IndividualWorkContainer = styled.div`
+    position: relative; 
     height: 62.5vh;
+    cursor: pointer;
     border: 2px solid red;
+    border-radius: 5em;
+    overflow: visible; 
     ${props => css`
         width: ${props.width || "50vw"};
     `}
 
+    &:hover .svg-icon {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 `;
+
+const SvgIcon = styled.div`
+    position: absolute;
+    top: ${({ top }) => top || '50%'};
+    left: ${({ left }) => left || '50%'};
+    transform: translate(-50%, -45%) scale(1); 
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10; 
+    width: 10em;
+    height: 10em; 
+    
+`;
+
 const Work = styled.div`
     width: 100%; 
     height: 100%; 
     background-color: #ccc; 
-    border-radius: 8px; 
+    border-radius: 5em; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     will-change: transform, box-shadow;
 
@@ -86,6 +109,8 @@ const Work = styled.div`
         box-shadow: -1px 10px 12px rgba(255,255,0,0.7); 
     }
 `;
+
+
 
 export function HomePage(props) {
     return (
@@ -96,7 +121,9 @@ export function HomePage(props) {
             <WorkContainer>
                 <IndividualWorkContainer className="ChaiMoh" width="34.623%">
                     <Work>
-
+                        <SvgIcon className="svg-icon" top="3%" left="30%">
+                            <ResearchSVG />
+                        </SvgIcon>
                     </Work>
                 </IndividualWorkContainer>
                 <IndividualWorkContainer className="Dukaan" width="57.8%">

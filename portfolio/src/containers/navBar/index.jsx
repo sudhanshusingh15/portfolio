@@ -135,15 +135,11 @@ export function Navbar(props) {
                 </AnchorLinkContainer>
                 <SepartionLine />
                 <AnchorLinkContainer>
-                    <AnchorLink to="/upload">Play</AnchorLink>
+                    <AnchorLink to="/upload">Resume</AnchorLink>
                 </AnchorLinkContainer>
                 <SepartionLine />
                 <AnchorLinkContainer>
-                    <AnchorLink to="/about">Notes</AnchorLink>
-                </AnchorLinkContainer>
-                <SepartionLine />
-                <AnchorLinkContainer>
-                    <AnchorLink to="/contact">Contact</AnchorLink>
+                    <AnchorLink to="/about">Contact</AnchorLink>
                 </AnchorLinkContainer>
             </LinksWrapper>
         </NavbarContainer>

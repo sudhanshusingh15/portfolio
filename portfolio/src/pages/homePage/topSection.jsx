@@ -42,10 +42,6 @@ const TextContainer = styled.div`
     z-index: 2;
     text-color: black;
     
-    ${props => css`
-        width: ${props.width || "100%"};
-        height: ${props.height || '100%'}; 
-    `}
 `;
 
 const Title = styled.h1`
@@ -165,7 +161,7 @@ export function TopSection(props) {
     return (
         <TopSectionContainer>
             {/* <BackgroundAnimation /> */}
-            <TextContainer height="auto">
+            <TextContainer>
                 <Title firstTitle isTitleVisible={isTitleVisible}>Hello! I am</Title>
                 <Title isTitleVisible={isTitleVisible}>Sudhanshu</Title>
                 <Text firstText fontSize="1.375em" fontWeight="0" isTextVisible={isTextVisible}>I am passionate about merging technology and user-centric design</Text>
