@@ -58,7 +58,6 @@ export function About(props) {
         <AboutPageContainer>
             <Navbar />
             <TextContainer>
-                {/* <Title firstTitle>About Me</Title> */}
                 <HelloWorld />
             </TextContainer>
         </AboutPageContainer>);
