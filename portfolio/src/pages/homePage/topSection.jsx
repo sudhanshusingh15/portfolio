@@ -171,6 +171,7 @@ export function TopSection(props) {
                 <Text fontSize="1.375em" fontWeight="0" isTextVisible={isTextVisible}>Spotify button to put later</Text>
             </SpotifyContainer>
         </TopSectionContainer>
+
     );
 }
 
