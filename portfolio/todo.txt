@@ -9,3 +9,8 @@ To Do List:
     3a. Download suitable svg for each card for hover effect
 
 4. Footer
+
+5. Use Varuna for body and amoera for Headers, CDN fonts
+
+6. Add Animations to HelloWorld and IntroContainer (First one only) in about page.
+    6a. Carousel effect for "Software Engineer" in IntroContainer

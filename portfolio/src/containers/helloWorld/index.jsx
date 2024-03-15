@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
 const greetings = [
-  { message: "नमस्ते विश्व!", color: "linear-gradient(45deg, #808000, #F5F5DC)" },
     { message: "Hello World!", color: "linear-gradient(45deg, #77FDFF, #FF0072)" },
     { message: "Ciao Mondo!", color: "linear-gradient(45deg, #ff5f6d, #ffc371)" },
     { message: "Привет, мир!", color: "linear-gradient(45deg, #43D681, #F0FF43)" },
+    { message: "नमस्ते विश्व!", color: "linear-gradient(45deg, #FFFDE4, #005AA7)" },
     { message: "¡Hola Mundo!", color: "linear-gradient(45deg, #fc466b, #3f5efb)" },
     { message: "こんにちは世界！", color: "linear-gradient(45deg, #92FFF6, #FFA6FA)" }, 
-    { message: "Bonjour le monde!", color: "linear-gradient(45deg, #5B00FF, #BB96FE)" }, 
+    { message: "Bonjour le monde!", color: "linear-gradient(45deg, #BB96FE, #5B00FF)" }, 
     { message: "Hej Världen!", color: "linear-gradient(45deg, #DCF8C6, #00A79D)" },
+    { message: "你好，世界!", color: "linear-gradient(45deg, #88D3CE, #6E45E2)" },
     { message: "Olá Mundo!", color: "linear-gradient(45deg, #E8C3BA, #D6AE7B)" },
     { message: "Hallo Welt!", color: "linear-gradient(45deg, #24c6dc, #514a9d)" },
     { message: "안녕 세상!", color: "linear-gradient(90deg, #FFFF00, #FF3B00)" },
-    { message: "नमस्ते विश्व!", color: "linear-gradient(45deg, #808000, #F5F5DC)" }
+    { message: "مرحبا بالعالم!", color: "linear-gradient(45deg, #808000, #F5F5DC)" }
   ];
-  
+ 
 
 const generateSlideInAnimation = () => {
     let keyframesString = `from { opacity: 0; transform: translateY(0%); }`;
