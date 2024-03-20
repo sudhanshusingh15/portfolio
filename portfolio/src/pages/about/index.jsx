@@ -29,8 +29,6 @@ const HelloWorldContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-    width: 85%;
-    height: auto; 
     display: flex;
     justify-content: center; 
     flex-direction: column;
@@ -40,6 +38,7 @@ const TextContainer = styled.div`
 
     ${props => css`
         width: ${props.width || "85%"};
+        height: ${props.height || "auto"};
     `}    
 `;
 
@@ -48,13 +47,13 @@ const IntroContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 85%;
     padding: 3em;
     border: 5px solid green;
 
     ${props => css`
         padding-top: ${props.paddingTop || "3em"};
         height: ${props.height || "75vh;"};
+        width: ${props.width || "85%"};
     `}
 
 `;
@@ -273,5 +272,66 @@ export function About(props) {
                     <Text fontSize="1.375em" fontWeight="400">decrease in malfunctions.</Text>
                 </TextContainer>
             </IntroContainer>
+            <p>
+                <br />
+            </p>
+            <Title fontSize="70px">Skills</Title>
+            <p>
+                <br />
+            </p>
+            <IntroContainer className="Skills" height="auto">
+                <TextContainer>
+                    <Title fontSize="2.0em" color="white">PROGRAMMING</Title>
+                    <p>
+                        <br />
+                    </p>
+                    <Text fontSize="1.375em" fontWeight="400" firstText>– Python</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Java</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– C++</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– C</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– PHP</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Bash</Text>
+
+                </TextContainer>
+                <TextContainer>
+                    <Title fontSize="2.0em" color="white">WEB DEVELOPMENT</Title>
+                    <p>
+                        <br />
+                    </p>
+                    <Text fontSize="1.375em" fontWeight="400" firstText>– React</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Node.js</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Express</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Django</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Flask</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– jQuery</Text>
+
+                </TextContainer>
+                <TextContainer>
+                    <Title fontSize="2.0em" color="white">TOOLS</Title>
+                    <p>
+                        <br />
+                    </p>
+                    <Text fontSize="1.375em" fontWeight="400" firstText>– Git</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Jenkins</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Docker</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– AWS</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Firebase</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– MongoDB</Text>
+
+                </TextContainer>
+                <TextContainer>
+                    <Title fontSize="2.0em" color="white">DESIGN</Title>
+                    <p>
+                        <br />
+                    </p>
+                    <Text fontSize="1.375em" fontWeight="400" firstText>– Photoshop</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Illustrator</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Figma</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– LATEX</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Sketch</Text>
+                    <Text fontSize="1.375em" fontWeight="400">– Adobe XD</Text>
+                </TextContainer>
+            </IntroContainer>
+
         </AboutContainer>);
 }
