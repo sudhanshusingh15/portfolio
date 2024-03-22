@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/homePage/index';
 import { TopSection } from './pages/homePage/topSection';
 import { About } from './pages/about';
+import { Dukaan } from './pages/work/dukaan';
 
 function App() {
   useEffect(() => {
@@ -37,10 +38,18 @@ function App() {
 // );
 // }
 
+// return (
+//   <Router>
+//     <div className="App">
+//         <About path="/about" />
+//     </div>
+//   </Router>
+// );
+
 return (
   <Router>
     <div className="App">
-        <About path="/about" />
+        <Dukaan path="/dukaan" />
     </div>
   </Router>
 );
