@@ -49,7 +49,7 @@ const TextContainer = styled.div`
 const PhotoContainer = styled.div`
     position: relative;
     border: 2px solid red;
-    border-radius: 5em;
+    border-radius: 3em;
     margin: 3em;
 
     ${props => css`
@@ -114,7 +114,7 @@ export function Dukaan(props) {
                 <Text fontSize="1.375em" fontWeight="400">catalog of Indian products available at Dukaan.</Text>
             </TextContainer>
             <IntroContainer>
-                <PhotoContainer width="85vw" height="85vh">
+                <PhotoContainer width="75vw" height="95vh">
                 
                 </PhotoContainer>
             </IntroContainer>

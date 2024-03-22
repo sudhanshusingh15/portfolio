@@ -14,3 +14,7 @@ To Do List:
 
 6. Add Animations to HelloWorld and IntroContainer (First one only) in about page.
     6a. Carousel effect for "Software Engineer" in IntroContainer
+
+
+7. For Dukaan: 1st Shopify app store ss, 2nd promo ss, 3rd prod design ss
+8. For Digital Pathology: 1st: Tech stack ss from Pathology project folder, 2nd Image ss from senior design link, 3rd: Web app ss from project folder.

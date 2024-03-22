@@ -4,6 +4,7 @@ import { HomePage } from './pages/homePage/index';
 import { TopSection } from './pages/homePage/topSection';
 import { About } from './pages/about';
 import { Dukaan } from './pages/work/dukaan';
+import { Pathology } from './pages/work/pathology';
 
 function App() {
   useEffect(() => {
@@ -49,7 +50,7 @@ function App() {
 return (
   <Router>
     <div className="App">
-        <Dukaan path="/dukaan" />
+        <Pathology path="/pathology" />
     </div>
   </Router>
 );
