@@ -5,6 +5,8 @@ import { TopSection } from './pages/homePage/topSection';
 import { About } from './pages/about';
 import { Dukaan } from './pages/work/dukaan';
 import { Pathology } from './pages/work/pathology';
+import { ChaiMoh } from './pages/work/chaimoh';
+import { LiveFeed } from './pages/work/livefeed';
 
 function App() {
   useEffect(() => {
@@ -50,7 +52,7 @@ function App() {
 return (
   <Router>
     <div className="App">
-        <Pathology path="/pathology" />
+        <LiveFeed path="/livefeed" />
     </div>
   </Router>
 );
